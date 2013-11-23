@@ -1,4 +1,3 @@
-
 var FRM = function(){
   var Global_object = {},
    day_abbreviated = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],

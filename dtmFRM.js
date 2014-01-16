@@ -105,5 +105,5 @@ var FRM = function(){
   
 };
 
-var f = new FRM();
-console.log(f.toString("1/12/2015 5:25:26","yyyy/MM/dd"));
+//var f = new FRM();
+//console.log(f.toString("1/12/2015 5:25:26","yyyy/MM/dd"));

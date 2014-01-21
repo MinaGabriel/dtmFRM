@@ -1,45 +1,44 @@
-/*
 
 +--------+--------------------------------------------+
-| d      | day of month 1 through 31.  				        |
+| d      | day of month 1 through 31.  				       
 +--------+--------------------------------------------+
-| dd     | day of month 01 through 31. 				        |
+| dd     | day of month 01 through 31. 				        
 +--------+--------------------------------------------+
-| ddd    | abbreviated name of the day of the week.   |
+| ddd    | abbreviated name of the day of the week.   
 +--------+--------------------------------------------+
-| dddd   | name of the day of the week.				        |
+| dddd   | name of the day of the week.				        
 +--------+--------------------------------------------+
-| h      | hours 1 through 12.       				          |
+| h      | hours 1 through 12.       				          
 +--------+--------------------------------------------+
-| hh     | hours 01 through 12.						            |
+| hh     | hours 01 through 12.						            
 +--------+--------------------------------------------+
-| H      | hours 0 through 24.                        |
+| H      | hours 0 through 24.                        
 +--------+--------------------------------------------+
-| HH     | hours 00 through 24                        |
+| HH     | hours 00 through 24                        
 +--------+--------------------------------------------+
-| m      | minute from 0 through 59 				  |
+| m      | minute from 0 through 59 				  
 +--------+--------------------------------------------+
-| mm     | minutes 00 through 59.					  |
+| mm     | minutes 00 through 59.					  
 +--------+--------------------------------------------+
-| M      | Month 1 through 12.						  |
+| M      | Month 1 through 12.						  
 +--------+--------------------------------------------+
-| MM     | Month 01 through 12.                       |
+| MM     | Month 01 through 12.                       
 +--------+--------------------------------------------+
-| MMM    | abbreviated name of the month.             |
+| MMM    | abbreviated name of the month.             
 +--------+--------------------------------------------+
-| MMMM   | full name of the month.                    |
+| MMMM   | full name of the month.                    
 +--------+--------------------------------------------+
-| s      | seconds 0 through 59.                      |
+| s      | seconds 0 through 59.                      
 +--------+--------------------------------------------+
-| ss     | seconds 00 through 59.                     |
+| ss     | seconds 00 through 59.                     
 +--------+--------------------------------------------+
-| ampm   | AM PM .									  |
+| ampm   | AM PM .									  
 +--------+--------------------------------------------+
-| y      | year last digit. 						  |
+| y      | year last digit. 						  
 +--------+--------------------------------------------+
-| yy     | year last 2 digits. 						  |
+| yy     | year last 2 digits. 						  
 +--------+--------------------------------------------+
-| yyyy   | year.									  |
+| yyyy   | year.									  
 +--------+--------------------------------------------+
 
 */

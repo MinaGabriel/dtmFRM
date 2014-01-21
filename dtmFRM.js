@@ -7,8 +7,7 @@ var FRM = function(){
       
    format_Specifier = {
   unix : function(){
-    
-    return new Date(this.date);
+      return new Date(this.date);
   },
   d: function(){ // day of month 1 through 31 
     return this.unix().getDate();
@@ -50,6 +49,7 @@ var FRM = function(){
     return month_abbreviated[this.unix().getMonth()];
   },
   MMMM: function(){ // full name of the month.
+      
     return month[this.unix().getMonth()];
   },
   s: function(){ // seconds 0 through 59 
@@ -69,41 +69,36 @@ var FRM = function(){
   }
   
 };
-
-
-
+    
   this.toString = function(datetime, format){
     if(!isNaN(new Date(datetime).getTime())){
+        
       format_Specifier.date = datetime;
-      
-       var format_array = format.split(" ");
-       var format_array_first = format_array[0].split("/");
-      
-       var final_array = [];
-      
-       //loop in the first part and compute 
-      
-      for(var i =0, l = format_array_first.length;i <l ; i++){
-        console.log(format_array_first[i]);
-        final_array.push(format_Spacifier[format_array_first[i]]());
-      }
-      return final_array;
-      // return format_Specifier.yyyy();
+        //TODO : Chaining or replace change the replaced 
+      var dtmFRM = format.replace(/dddd/g,format_Specifier.dddd())
+                             .replace(/ddd/g,format_Specifier.ddd())
+                             .replace(/dd/g, format_Specifier.dd())
+                             .replace(/d/g, format_Specifier.d())
+                             .replace(/hh/g, format_Specifier.hh())
+                             .replace(/HH/g, format_Specifier.HH())
+                             .replace(/h/g, format_Specifier.h())
+                             .replace(/MMMM/g, format_Specifier.MMMM())
+                             .replace(/MMM/g, format_Specifier.MMM())
+                             .replace(/MM/g, format_Specifier.MM())
+                             .replace(/mm/g, format_Specifier.mm())
+                             .replace(/m/g, format_Specifier.m())
+                             .replace(/M/g, format_Specifier.M())
+                             .replace(/ss/g, format_Specifier.ss())
+                             .replace(/s/g, format_Specifier.s())
+                             .replace(/yyyy/g, format_Specifier.yyyy())
+                             .replace(/yy/g, format_Specifier.yy())
+                             .replace(/y/g, format_Specifier.y());
+        
+      return dtmFRM;
     }
-      
-    
-    
     return 'Not a valid date time or format';
-     
-   
-  };
-  
-  
-  
-  
-  
-  
+  };  
 };
 
-//var f = new FRM();
-//console.log(f.toString("1/12/2015 5:25:26","yyyy/MM/dd"));
+var f = new FRM();
+console.log(f.toString("01/12/2015 5:25:26","dddd/MMMM/d"));

@@ -58,6 +58,9 @@ var FRM = function(){
   ss: function(){ // seconds 00 through 59 
     return (this.unix().getSeconds() < 10 ? "0" : "") + this.unix().getSeconds(); 
   },
+  ampm :function(){
+      return this.unix().getHours() >= 12 ? "PM" : "AM" ;
+  },
   y:function(){
      return String(this.unix().getFullYear()).substr(3);
   },
@@ -89,6 +92,7 @@ var FRM = function(){
                              .replace(/(\b)m(\b)/g, format_Specifier.m())
                              .replace(/(\b)M(\b)/g, format_Specifier.M())
                              .replace(/(\b)ss(\b)/g, format_Specifier.ss())
+                             .replace(/(\b)ampm(\b)/g, format_Specifier.ampm())
                              .replace(/(\b)s(\b)/g, format_Specifier.s())
                              .replace(/(\b)yyyy(\b)/g, format_Specifier.yyyy())
                              .replace(/(\b)yy(\b)/g, format_Specifier.yy())
@@ -101,4 +105,4 @@ var FRM = function(){
 };
 
 var f = new FRM();
-console.log(f.toString("08/14/2015 5:25:26","This is my Date MM/yyyy/m"));
+console.log(f.toString(1390324484209,"MM/dd/yyyy hh:mm:ss ampm"));

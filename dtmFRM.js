@@ -5,7 +5,7 @@ var FRM = function(){
    month_abbreviated = ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"],
    month = ["January","February","March","April","May","June","July","August","September","October","November","December"],
       
-   format_Spacifier = {
+   format_Specifier = {
   unix : function(){
     
     return new Date(this.date);
@@ -74,7 +74,7 @@ var FRM = function(){
 
   this.toString = function(datetime, format){
     if(!isNaN(new Date(datetime).getTime())){
-      format_Spacifier.date = datetime;
+      format_Specifier.date = datetime;
       
        var format_array = format.split(" ");
        var format_array_first = format_array[0].split("/");
@@ -88,7 +88,7 @@ var FRM = function(){
         final_array.push(format_Spacifier[format_array_first[i]]());
       }
       return final_array;
-      // return format_Spacifier.yyyy();
+      // return format_Specifier.yyyy();
     }
       
     

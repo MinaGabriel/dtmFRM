@@ -1,4 +1,4 @@
-var FRM = function(){
+var dtmFRM = function(){
   var Global_object = {},
    day_abbreviated = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
    day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
@@ -73,12 +73,12 @@ var FRM = function(){
   
 };
     
-  this.toString = function(datetime, format){
+  this.ToString = function(datetime, format){
     if(!isNaN(new Date(datetime).getTime())){
         
       format_Specifier.date = datetime;
         //TODO : Chaining or replace change the replaced 
-        var dtmFRM = format.replace(/(\b)dddd(\b)/g,format_Specifier.dddd())
+        var _FRM = format.replace(/(\b)dddd(\b)/g,format_Specifier.dddd())
                              .replace(/(\b)ddd(\b)/g,format_Specifier.ddd())
                              .replace(/(\b)dd(\b)/g, format_Specifier.dd())
                              .replace(/(\b)d(\b)/g, format_Specifier.d())
@@ -98,11 +98,11 @@ var FRM = function(){
                              .replace(/(\b)yy(\b)/g, format_Specifier.yy())
                              .replace(/(\b)y(\b)/g, format_Specifier.y());
         
-      return dtmFRM;
+      return _FRM;
     }
     return 'Not a valid date time or format';
   };  
 };
 
-var f = new FRM();
-console.log(f.toString(1390324484209,"MM/dd/yyyy hh:mm:ss ampm"));
+var f = new dtmFRM();
+console.log(f.ToString(new Date().getTime(),"MM/dd/yyyy hh:mm:ss ampm")); //NOW 

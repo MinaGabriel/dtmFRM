@@ -75,24 +75,24 @@ var FRM = function(){
         
       format_Specifier.date = datetime;
         //TODO : Chaining or replace change the replaced 
-      var dtmFRM = format.replace(/dddd/g,format_Specifier.dddd())
-                             .replace(/ddd/g,format_Specifier.ddd())
-                             .replace(/dd/g, format_Specifier.dd())
-                             .replace(/d/g, format_Specifier.d())
-                             .replace(/hh/g, format_Specifier.hh())
-                             .replace(/HH/g, format_Specifier.HH())
-                             .replace(/h/g, format_Specifier.h())
-                             .replace(/MMMM/g, format_Specifier.MMMM())
-                             .replace(/MMM/g, format_Specifier.MMM())
-                             .replace(/MM/g, format_Specifier.MM())
-                             .replace(/mm/g, format_Specifier.mm())
-                             .replace(/m/g, format_Specifier.m())
-                             .replace(/M/g, format_Specifier.M())
-                             .replace(/ss/g, format_Specifier.ss())
-                             .replace(/s/g, format_Specifier.s())
-                             .replace(/yyyy/g, format_Specifier.yyyy())
-                             .replace(/yy/g, format_Specifier.yy())
-                             .replace(/y/g, format_Specifier.y());
+        var dtmFRM = format.replace(/(\b)dddd(\b)/g,format_Specifier.dddd())
+                             .replace(/(\b)ddd(\b)/g,format_Specifier.ddd())
+                             .replace(/(\b)dd(\b)/g, format_Specifier.dd())
+                             .replace(/(\b)d(\b)/g, format_Specifier.d())
+                             .replace(/(\b)hh(\b)/g, format_Specifier.hh())
+                             .replace(/(\b)HH(\b)/g, format_Specifier.HH())
+                             .replace(/(\b)h(\b)/g, format_Specifier.h())
+                             .replace(/(\b)MMMM(\b)/g, format_Specifier.MMMM())
+                             .replace(/(\b)MMM(\b)/g, format_Specifier.MMM())
+                             .replace(/(\b)MM(\b)/g, format_Specifier.MM())
+                             .replace(/(\b)mm(\b)/g, format_Specifier.mm())
+                             .replace(/(\b)m(\b)/g, format_Specifier.m())
+                             .replace(/(\b)M(\b)/g, format_Specifier.M())
+                             .replace(/(\b)ss(\b)/g, format_Specifier.ss())
+                             .replace(/(\b)s(\b)/g, format_Specifier.s())
+                             .replace(/(\b)yyyy(\b)/g, format_Specifier.yyyy())
+                             .replace(/(\b)yy(\b)/g, format_Specifier.yy())
+                             .replace(/(\b)y(\b)/g, format_Specifier.y());
         
       return dtmFRM;
     }
@@ -101,4 +101,4 @@ var FRM = function(){
 };
 
 var f = new FRM();
-console.log(f.toString("01/12/2015 5:25:26","dddd/MMMM/d"));
+console.log(f.toString("08/14/2015 5:25:26","This is my Date MM/yyyy/m"));

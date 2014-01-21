@@ -1,3 +1,51 @@
+
+/*
+
+
++--------+--------------------------------------------+
+| d      | day of month 1 through 31.  				  |
++--------+--------------------------------------------+
+| dd     | day of month 01 through 31. 				  |
++--------+--------------------------------------------+
+| ddd    | abbreviated name of the day of the week.   |
++--------+--------------------------------------------+
+| dddd   | name of the day of the week.				  |
++--------+--------------------------------------------+
+| h      | hours 1 through 12.       				  |
++--------+--------------------------------------------+
+| hh     | hours 01 through 12.						  |
++--------+--------------------------------------------+
+| H      | hours 0 through 24.                        |
++--------+--------------------------------------------+
+| HH     | hours 00 through 24                        |
++--------+--------------------------------------------+
+| m      | minute from 0 through 59 				  |
++--------+--------------------------------------------+
+| mm     | minutes 00 through 59.					  |
++--------+--------------------------------------------+
+| M      | Month 1 through 12.						  |
++--------+--------------------------------------------+
+| MM     | Month 01 through 12.                       |
++--------+--------------------------------------------+
+| MMM    | abbreviated name of the month.             |
++--------+--------------------------------------------+
+| MMMM   | full name of the month.                    |
++--------+--------------------------------------------+
+| s      | seconds 0 through 59.                      |
++--------+--------------------------------------------+
+| ss     | seconds 00 through 59.                     |
++--------+--------------------------------------------+
+| ampm   | AM PM .									  |
++--------+--------------------------------------------+
+| y      | year last digit. 						  |
++--------+--------------------------------------------+
+| yy     | year last 2 digits. 						  |
++--------+--------------------------------------------+
+| yyyy   | year.									  |
++--------+--------------------------------------------+
+
+*/
+
 var dtmFRM = function(){
   var Global_object = {},
    day_abbreviated = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],
@@ -9,53 +57,52 @@ var dtmFRM = function(){
   unix : function(){
       return new Date(this.date);
   },
-  d: function(){ // day of month 1 through 31 
+  d: function(){
     return this.unix().getDate();
   },
-  dd : function(){ //day of month 01 through 31
+  dd : function(){ 
     return (this.unix().getDate() < 10 ? '0' : '')  + (this.unix().getDate());
   },
-  ddd :function(){ //abbreviated name of the day of the week.
+  ddd :function(){ 
     return day_abbreviated[this.unix().getDay()];
   },
-  dddd :function(){ //abbreviated name of the day of the week.
+  dddd :function(){ 
     return day[this.unix().getDay()];
   },
-  h : function (){ //houres 1 through 12
+  h : function (){ 
     return ((this.unix().getHours() + 11) % 12 + 1);
   },
-  hh: function(){ //houres 01 through 12
+  hh: function(){ 
     return (((this.unix().getHours() + 11) % 12 + 1) < 10 ? "0" : "") + ((this.unix().getHours() + 11) % 12 + 1) ; 
   },
-  H : function(){ //houres 00 through 24 
+  H : function(){ 
     return  this.unix().getHours();
   },
   HH : function(){
     return (this.unix().getHours() < 10 ? "0" : "") + this.unix().getHours();
   },
-  m : function(){ // minute from 0 59 
+  m : function(){ 
     return this.unix().getMinutes();
   },
-  mm : function(){ // minutes 00 through 59
+  mm : function(){ 
     return (this.unix().getMinutes() < 10 ? "0" : "") + this.unix().getMinutes();
   },
-  M: function(){ // 1 through 12. 
+  M: function(){  
     return this.unix().getMonth() + 1 ;
   },
-  MM: function(){ // 01 through 12.
+  MM: function(){ 
   return (this.unix().getMonth() < 10 ? '0' : '') + (this.unix().getMonth() + 1); 
   },
-  MMM: function(){ //  abbreviated name of the month.
+  MMM: function(){ 
     return month_abbreviated[this.unix().getMonth()];
   },
-  MMMM: function(){ // full name of the month.
-      
+  MMMM: function(){      
     return month[this.unix().getMonth()];
   },
-  s: function(){ // seconds 0 through 59 
+  s: function(){
     return this.unix().getSeconds();
   },
-  ss: function(){ // seconds 00 through 59 
+  ss: function(){ 
     return (this.unix().getSeconds() < 10 ? "0" : "") + this.unix().getSeconds(); 
   },
   ampm :function(){
@@ -77,7 +124,6 @@ var dtmFRM = function(){
     if(!isNaN(new Date(datetime).getTime())){
         
       format_Specifier.date = datetime;
-        //TODO : Chaining or replace change the replaced 
         var _FRM = format.replace(/(\b)dddd(\b)/g,format_Specifier.dddd())
                              .replace(/(\b)ddd(\b)/g,format_Specifier.ddd())
                              .replace(/(\b)dd(\b)/g, format_Specifier.dd())

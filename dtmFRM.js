@@ -1,5 +1,7 @@
 /*
-
+* dtmFRM v 1.0.0 
+* MIT 
+* (c) 2014 Mina Gabriel 
 
 +--------+--------------------------------------------+
 | d      | day of month 1 through 31.  				       
@@ -148,6 +150,8 @@ var dtmFRM = function(){
     return 'Not a valid date time or format';
   };  
 };
-/*
-var f = new dtmFRM();
-console.log(f.ToString(new Date().getTime(),"MM/dd/yyyy hh:mm:ss ampm")); //NOW 
+
+//usage 
+
+//var f = new dtmFRM();
+//console.log(f.ToString(new Date().getTime(),"MM/dd/yyyy hh:mm:ss ampm")); //NOW 

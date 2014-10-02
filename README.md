@@ -10,7 +10,7 @@ var nowDateAndTime = myDate.ToString(new Date().getTime(),"MM/dd/yyyy hh:mm:ss a
 
 DEMO 
 
-http://jsfiddle.net/minagabriel/7sN5k/
+http://jsfiddle.net/7sN5k/2/
 
 
 

@@ -92,7 +92,7 @@ var dtmFRM = function(){
     return this.unix().getMonth() + 1 ;
   },
   MM: function(){ 
-  return (this.unix().getMonth() < 11 ? "0" : '') + (this.unix().getMonth() + 1); 
+  return (this.unix().getMonth() + 1 < 10 ? "0" : '') + (this.unix().getMonth() + 1); 
   },
   MMM: function(){ 
     return month_abbreviated[this.unix().getMonth()];
